@@ -35,6 +35,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
+  background: rgb(9, 9, 70);
 }
 #nav {
   background: white;

@@ -5,10 +5,10 @@ exports.createComment = async (req, res, next) => {
     try {
         let comment = await Comments.create({
             ...req.body,
-            postId: req.params.post.Id,
+            postId: req.params.postId,
             userId: req.user.id
         })
-        comment = await Comments.finOne({
+        comment = await Comments.findOne({
             where: {id: comment.id },
             include: db.user
         })
@@ -23,6 +23,7 @@ exports.getOneComment = (req, res, next) => {
     .then(comment => res.status(200).json({ comment }))
     .catch(error => res.status(404).json({ error }))
 }
+
 
 exports.getAllComments = (req, res, next) => {
     const options = {
@@ -51,7 +52,8 @@ exports.modifyComment = (req, res, next) => {
             if (!comment) {
                 res.status(400).json({ error: 'You don not have permission to change the comment.'})
             } else {
-                comment.update(req.body)
+                comment
+                .update(req.body)
                 .then(comment => res.status(200).json({ comment }))
             }
         })
@@ -74,5 +76,5 @@ exports.modifyComment = (req, res, next) => {
             .then(() => res.status(200).json({ message: 'Comment deleted.'}))
             .catch(error => res.status(400).json({ error }))
         })
-        .catch(error => res.status(500).json({ error: EmptyResultError.message }))
+        .catch(error => res.status(500).json({ error: error.message }))
 }

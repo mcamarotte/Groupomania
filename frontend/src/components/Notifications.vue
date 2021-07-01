@@ -19,7 +19,7 @@
       "
     >
       <b-card class="border-0" @click="toggleActions">
-        <div v-for="notification in notificationsList" :key="notification">
+        <div v-for="(notification, index) in notificationsList" :key="index">
           <router-link
             :to="{ name: 'OnePost', params: { postId: notification.postId } }"
             @click.native="deleteNotification(notification)"
@@ -93,6 +93,8 @@ export default {
       const res = await apiClient.delete(
         `api/notifications/${notificationToDelete.id}`
       )
+              console.log(res)
+
       this.notificationsList = this.notificationsList.filter(
         notification => notification.id !== notificationToDelete.id
       )
@@ -107,7 +109,7 @@ export default {
   top: 22px;
   right: 175px;
   box-shadow: 0px 1px 1px 1px rgba(204, 204, 204, 0.2);
-  background-color: rgba(108, 117, 125, 0.1) !important;
+  background-color: rgba(199, 113, 52, 0.1) !important;
   border-radius: 100%;
   width: 42px;
   height: 42px;

@@ -7,7 +7,7 @@ exports.createPost = async (req,res, next) => {
 
     if (req.file) {
         postObject = JSON.parse(req.body.post)
-        postObject.imageURL = `${req.protocol}://${req.get('host')}/public/${req.file.filename}`
+        postObject.imageUrl = `${req.protocol}://${req.get('host')}/public/${req.file.filename}`
         }
 
         try {
@@ -26,7 +26,7 @@ exports.createPost = async (req,res, next) => {
     exports.getOnePost = (req, res, next) => {
         Post.findOne({
             where: {id: req.params.id},
-            include: [{ model: db.User}]
+            include: [{ model: db.User }]
         })
         .then(post => res.status(200).json({ post }))
         .catch(error => res.status(404).json({ error }))
@@ -37,11 +37,7 @@ exports.getAllPosts = (req, res, next) => {
   const page = parseInt(req.query.page) || 1
 
   const options = {
-    include: [
-      {
-        model: db.User
-      }
-    ],
+    include: [{ model: db.User }],
     limit,
     offset: limit * (page - 1),
     order: [['createdAt', 'DESC']]
@@ -60,7 +56,7 @@ exports.getAllPosts = (req, res, next) => {
 // modify post which has already posted
     exports.modifyPost = (req, res, next) => {
         const postObject = req.file
-        ?{
+        ? {
             ...JSON.parse(req.body.post),
             imageUrl: `${req.protocol}://${req.get('host')}/public/${req.file.filename}`
       }

@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex align-items-center position-relative">
       <router-link
-        :to="{ name: 'UserProfile', params: { userId: comment.User.id } }">
+        :to="{ name: 'UserProfile', params: { userId: comment.User.id} }">
         <div class="d-flex text-center mr-2 mt-2">
           <ProfileImage
             :src="comment.User.imageUrl"
@@ -11,7 +11,7 @@
         </div>
      </router-link>
       <div class="comment-box">
-        <router-link
+     <router-link
           :to="{ name: 'UserProfile', params: { userId: comment.User.id } }">
           <p class="mb-0 font-weight-bold">
             {{ comment.User.firstName }} {{ comment.User.lastName }}
@@ -72,6 +72,8 @@ export default {
     }
   },
   methods: {
+    ...mapActions(['displayNotification']),
+
     toggleActions () {
       this.areActionsVisible = !this.areActionsVisible
     },
@@ -79,7 +81,10 @@ export default {
       const res = await apiClient.delete(
         `api/posts/${this.post.id}/comments/${this.comment.id}`
       )
+    console.log(res)
       this.$emit('commentDeleted', this.comment)
+      this.displayNotification('Commented deleted')
+
     },
     startEditing () {
       this.isEditing = true
@@ -97,6 +102,8 @@ export default {
       )
       this.comment.updatedAt = res.comment.updatedAt
       this.isEditing = false
+      this.displayNotification('Comment modified')
+
     }
   }
 }

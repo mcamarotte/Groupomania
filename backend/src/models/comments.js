@@ -1,15 +1,16 @@
 'use strict';
-const { Model } = require('sequelize');
+const { Model } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
   class Comments extends Model {
 
-    static associate(models) {
+    static associate (models) {
       Comments.belongsTo(models.User, { foreignKey: 'userId' })
       Comments.belongsTo(models.Post, { foreignKey: 'postId' })
     }
   }
-  Comments.init({
+  Comments.init(
+    {
     postId: DataTypes.INTEGER,
     content: {
       type: DataTypes.TEXT,
@@ -30,13 +31,15 @@ Comments.afterCreate(async comment => {
   if (user.id == post.userId) return
 
   const notification = await sequelize.models.Notification.create({
-    content: `<b>${user.firstName} ${ user.lastName}</b> 
-    commented on your post from 
-    ${post.readableCreatedAt()}`,
+    content: `<b>${user.firstName} ${ 
+      user.lastName
+    }</b> commented on your post from ${post.readableCreatedAt()}`,
     recipientUserId: post.userId,
     postId: post.id,
-    senderUserId: user.id
+    senderUserId: user.id,
   })
+  console.log (notification)
+
 })
 
 return Comments

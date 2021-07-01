@@ -4,11 +4,11 @@
       v-if="count > 1 && !allCommentsDisplayed"
       @click="fetchAllComments"
       class="display-comments mb-2 pt-0 d-flex text-left">
-      <span v-if="count > 2">Display {{ count - 1 }} other comments</span>
-      <span v-else>Display {{ count - 1 }} another comments</span>
+      <span v-if="count > 2">Display {{ count - 1 }} others comments</span>
+      <span v-else>Display {{ count - 1 }} other comments</span>
     </button>
     
-    <div class="comment mb-2 text-left" v-for="comment in list" :key="comment">
+    <div class="comment mb-2 text-left" v-for="(comment,index) in list" :key="index">
       <Comment
         @commentDeleted="removeComment"
         :comment="comment"
@@ -22,15 +22,12 @@
 
 <script>
 import { apiClient } from '../services/ApiClient'
-import router from '../router/index'
-import PostsList from '../components/PostsList'
 import CreateComment from './CreateComment'
 import Comment from './Comment'
 export default {
   name: 'CommentsList',
   components: {
     CreateComment,
-    PostsList,
     Comment
   },
   props: ['post'],

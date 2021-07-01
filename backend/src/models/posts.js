@@ -14,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
 
     readableCreatedAt () {
       return moment(this.createdAt)
-        .locale('en-GB')
+        .locale('en')
         .format('LL')
     }
   }

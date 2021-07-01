@@ -76,10 +76,11 @@ export default {
 .profile-btn {
   font-weight: 500;
   border: none;
-  color: white;
+  color: rgba(23, 4, 66, 0.8);
   top: 20px;
   right: 45px;
   height: 45px;
+  gap: 10px;
   padding: 5px 5px 5px 16px;
   box-shadow: 0px 0px 1px 1px rgba(23, 4, 66, 0.8);
   background-color: white !important;
@@ -94,6 +95,9 @@ export default {
 .profile-btn:hover,
 .profile-btn:visited {
   background-color: rgba(23, 4, 66, 0.8) !important;
+  font-weight: 500;
+  border: none;
+  color: white;
 }
 
 .profile-btn__img {

@@ -128,21 +128,14 @@ export default {
   background-color: rgba(192, 192, 192, 0.5);
 }
 .create-button {
-  background: rgba(192, 192, 192, 0.5);
-  color: #747474;
+  gap: 10px;
   border: none;
-  border-radius: 0.25rem;
+  border-radius: 4px;
   font-weight: 500;
-  padding: 0.375rem 0.75rem;
+  padding: 6px 12px;
 }
 .create-button:hover {
     background-color: rgba(108, 117, 125, 0.1);
-}
-
-.create-button:active,
-.create-button:focus {
-  background-color: white !important;
-  outline: none;
 }
 
 </style>

@@ -28,7 +28,7 @@
 
 <script>
 import { apiClient } from '../services/ApiClient'
-import router from '../router/index'
+//import router from '../router/index'
 import ProfileImage from './ProfileImage'
 export default {
   name: 'CreateComment',
@@ -43,12 +43,14 @@ export default {
     }
   },
   methods: {
+    
     async createComment (event) {
+      console.log(event)
       if (!this.content.trim().length) return
       const { comment } = await apiClient.post(
         `api/posts/${this.post.id}/comments`,
-        {
-          content: this.content
+        {content: this.content
+          
         }
       )
       this.content = ''
@@ -87,5 +89,4 @@ export default {
     height: 38px;
   }
 }
-
 </style>
