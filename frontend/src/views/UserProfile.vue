@@ -68,6 +68,7 @@ export default {
   height: 120px;
 }
 .user-name {
+  color: white;
   font-size: 20px;
   font-weight: bold;
 }

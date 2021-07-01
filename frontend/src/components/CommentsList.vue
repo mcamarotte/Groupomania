@@ -52,6 +52,10 @@ export default {
       this.allCommentsDisplayed = true
     },
     appendComment (comment) {
+     
+      comment.User = {}
+      comment.User = JSON.parse(localStorage.getItem('userData'))
+    
       this.list.push(comment)
     },
     removeComment (commentToDelete) {

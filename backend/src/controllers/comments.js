@@ -66,7 +66,7 @@ exports.modifyComment = (req, res, next) => {
             where.userId = req.user.id
           }
           
-        comments.findOne ({ where })
+        Comments.findOne ({ where })
         .then(comment => {
             if(!comment) {
                 res.status(400).json({ error: 'You don not have permission to change the comment.'})

@@ -49,8 +49,8 @@ export default {
       if (!this.content.trim().length) return
       const { comment } = await apiClient.post(
         `api/posts/${this.post.id}/comments`,
-        {content: this.content
-          
+        {
+          content: this.content
         }
       )
       this.content = ''

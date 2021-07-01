@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex align-items-center position-relative">
       <router-link
-        :to="{ name: 'UserProfile', params: { userId: comment.User.id} }">
+        :to="{ name: 'UserProfile', params: {userId:comment.User.id} }">
         <div class="d-flex text-center mr-2 mt-2">
           <ProfileImage
             :src="comment.User.imageUrl"
@@ -12,7 +12,7 @@
      </router-link>
       <div class="comment-box">
      <router-link
-          :to="{ name: 'UserProfile', params: { userId: comment.User.id } }">
+          :to="{ name: 'UserProfile', params: {userId:comment.User.id } }">
           <p class="mb-0 font-weight-bold">
             {{ comment.User.firstName }} {{ comment.User.lastName }}
           </p>
@@ -28,7 +28,7 @@
           type="text"
           class="input-content border-0 my-2"
         />
-        <p v-else class="mb-0">{{ comment.content }}</p>
+        <p v-else class="mb-0">{{ comment.content }} </p>
       </div>
       <div class="position-relative">
         <EditButton
