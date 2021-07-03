@@ -15,7 +15,7 @@ export default {
   props: ['userProfile'],
   methods: {
     async confirmDeletion () {
-      if (confirm('Are you sure you want to delete this account ?')) {
+      if (confirm('Are you sure you want to delete this account 2?')) {
         await apiClient.delete(`api/users/${this.userProfile.id}`)
         window.location.reload()
       }
@@ -23,4 +23,5 @@ export default {
   }
 }
 </script>
+
 <style></style>

@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     async confirmDeletion () {
-      if (confirm('Are you sure you want to delete your account?')) {
+      if (confirm('Are you sure you want to delete your account ?')) {
         await apiClient.delete(`api/users/${this.userData.id}`)
         localStorage.clear()
         this.$router.push({
