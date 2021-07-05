@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import router from '../router/index'
 import { mapState, mapActions } from 'vuex'
 import Post from './Post'
 export default {
@@ -54,12 +53,14 @@ export default {
 </script>
 
 <style>
+
 .post {
   display: block;
   overflow: hidden;
   width: 100%;
   height: 350px;
 }
+
 .post__image {
   max-width: 100%;
   max-height: 100%;

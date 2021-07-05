@@ -122,6 +122,11 @@ a {
   text-decoration: none;
   color: #2c3e50 !important;
 }
+
+p{
+  gap:10px;
+}
+
 .account-btn {
   background-color: rgb(253, 45, 6);
   color: white;

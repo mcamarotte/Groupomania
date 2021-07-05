@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import { apiClient } from '../services/ApiClient'
-import router from '../router/index'
 import { mapState, mapActions } from 'vuex'
 import CreatePost from '../components/CreatePost'
 import PostsList from '../components/PostsList'
@@ -44,6 +42,7 @@ export default {
 .card-body {
   padding-bottom: 0;
 }
+
 @media screen and (min-width: 280px) and (max-width: 769px) {
   .card-body {
     padding: 0.7rem;

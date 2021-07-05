@@ -11,7 +11,7 @@
         </div>
      </router-link>
       <div class="comment-box">
-     <router-link
+        <router-link
           :to="{ name: 'UserProfile', params: {userId:comment.User.id } }">
           <p class="mb-0 font-weight-bold">
             {{ comment.User.firstName }} {{ comment.User.lastName }}

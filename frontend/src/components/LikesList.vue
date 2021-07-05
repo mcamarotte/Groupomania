@@ -8,9 +8,7 @@
       <div
         class="svg-container d-flex justify-content-center align-items-center">
         <svg style="width:17px;height:17px" viewBox="0 0 24 24">
-          <path
-            fill="#fff"
-            d="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"/>
+          <path fill="#fff" d="M23,10C23,8.89 22.1,8 21,8H14.68L15.64,3.43C15.66,3.33 15.67,3.22 15.67,3.11C15.67,2.7 15.5,2.32 15.23,2.05L14.17,1L7.59,7.58C7.22,7.95 7,8.45 7,9V19A2,2 0 0,0 9,21H18C18.83,21 19.54,20.5 19.84,19.78L22.86,12.73C22.95,12.5 23,12.26 23,12V10M1,21H5V9H1V21Z"/>
         </svg>
       </div>
       <span class="likes-number ml-2">{{ likesCount }}</span>
@@ -22,10 +20,7 @@
           :to="{ name: 'UserProfile', params: { userId: like.User.id } }">
           <div class="d-flex align-items-center">
             <div class="d-flex text-center">
-              <ProfileImage
-                :src="like.User.imageUrl"
-                customClass="like-profile-picture"
-                divCustomClass="div-like-picture"/>
+              <ProfileImage :src="like.User.imageUrl" customClass="like-profile-picture" divCustomClass="div-like-picture"/>
             </div>
             <p>{{ like.User.firstName }} {{ like.User.lastName }}</p>
           </div></router-link>

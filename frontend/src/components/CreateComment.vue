@@ -9,6 +9,7 @@
             divCustomClass="div-comment-picture"
         /></router-link>
       </div>
+
       <b-form class="w-100" @submit="createComment">
         <b-form-group>
           <b-form-textarea
@@ -19,8 +20,8 @@
             @keydown.enter.shift.exact="newline"
             class="comment-area border-0"
             placeholder="Write a comment here">
-          </b-form-textarea
-        ></b-form-group>
+          </b-form-textarea>
+        </b-form-group>
       </b-form>
     </div>
   </div>
@@ -28,7 +29,6 @@
 
 <script>
 import { apiClient } from '../services/ApiClient'
-//import router from '../router/index'
 import ProfileImage from './ProfileImage'
 export default {
   name: 'CreateComment',

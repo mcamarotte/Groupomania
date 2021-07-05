@@ -15,16 +15,16 @@
                     type="email"
                     placeholder="Email"
                     v-model="input.email"
-                    class="account-input text-dark mb-2 mt-4 pl-3 w-100"
-                  ></b-form-input>
+                    class="account-input text-dark mb-2 mt-4 pl-3 w-100">
+                  </b-form-input>
 
                   <b-form-input
                     id="password"
                     type="password"
                     placeholder="Password"
                     v-model="input.password"
-                    class="account-input text-dark mb-2 pl-3 w-100"
-                  ></b-form-input>
+                    class="account-input text-dark mb-2 pl-3 w-100">
+                  </b-form-input>
                 </b-form-group>
 
                 <button
@@ -34,11 +34,11 @@
                   class="account-btn font-weight-bold">
                   Login
                 </button>
+
                 <p class="my-3 text-danger">{{ errorMessage }}</p>
               </b-form>
             </div>
             <div class="line my-3"></div>
-
             <p class="font-small grey-text d-flex justify-content-center mb-1">
               You are not registered
               <router-link to="/signup" class="font-weight-bold ml-1"> Create an account </router-link>
@@ -110,12 +110,18 @@ a {
   text-decoration: none;
   color: #2c3e50 !important;
 }
+
+p {
+  gap: 10px;
+}
+
 .line {
   display: block;
   width: 100%;
   height: 1px;
   background-color: rgba(192, 192, 192, 0.5);
 }
+
 .account-input,
 .account-input:-webkit-autofill {
   border: none;
@@ -123,6 +129,7 @@ a {
   box-shadow: 0 0 0px 1000px rgba(32, 120, 244, 0.2) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
+
 .account-input:focus {
   border: none;
   border-radius: 6px;

@@ -14,6 +14,7 @@
           ref="searchInput"/>
       </div>
     </div>
+
     <button
       class="search-btn-mobile position-fixed border-0 p-0 bg-transparent d-lg-none d-xl-none"
       type="button"
@@ -25,8 +26,8 @@
       v-if="usersList.length"
       class="users-list card border-0 position-fixed">
       <div v-for="user in usersList" :key="user.id">
-        <router-link :to="{ name: 'UserProfile', params: { userId: user.id } }"
-          ><div class="d-flex align-items-center">
+        <router-link :to="{ name: 'UserProfile', params: { userId: user.id } }">
+          <div class="d-flex align-items-center">
             <div class="d-flex text-center">
               <ProfileImage
                 :src="user.imageUrl"
@@ -34,7 +35,8 @@
                 divCustomClass="div-like-picture"/>
             </div>
             <p>{{ user.firstName }} {{ user.lastName }}</p>
-          </div></router-link>
+          </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -42,7 +44,6 @@
 
 <script>
 import { apiClient } from '../services/ApiClient'
-import router from '../router/index'
 import ProfileImage from './ProfileImage'
 export default {
   name: 'UserSearch',

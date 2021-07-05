@@ -10,23 +10,22 @@
 
     <b-collapse
       v-bind:class="
-        `${classCollapse ||
-          ''} btn-collapsed collapsed mt-2 position-absolute ${areActionsVisible && 'visible'}`">
+        `${classCollapse || ''} btn-collapsed collapsed mt-2 position-absolute ${areActionsVisible && 'visible'}`">
       <b-card class="border-0" @click="toggleActions">
         <p class="card-text" v-if="isCreator">
           <b-button
             class="text-left w-100"
             v-if="editingPost && isCreator" block v-b-modal="`modal-${elementId}`">
-            <b-icon icon="pencil" class="mr-2 mr-lg-3"></b-icon
-            ><span>{{ modifyText }}</span></b-button>
+            <b-icon icon="pencil" class="mr-2 mr-lg-3"></b-icon><span>{{ modifyText }}</span></b-button>
+          
           <b-button
-
             class="text-left w-100"
             v-if="!editingPost && isCreator" block @click="clickedEditButton">
             <b-icon icon="pencil" class="mr-2 mr-lg-3"></b-icon><span>{{ modifyText }}</span>
           </b-button>
           <slot></slot>
         </p>
+
         <p class="card-text">
           <b-button
             class="text-left w-100"
@@ -35,8 +34,7 @@
             v-on:click="onDelete">
             <b-icon icon="trash" class="mr-2 mr-lg-3"></b-icon>
             <span>{{ deleteText }}</span>
-          </b-button
-          >
+          </b-button>
         </p>
       </b-card>
     </b-collapse>
@@ -44,7 +42,6 @@
 </template>
 
 <script>
-import { apiClient } from '../services/ApiClient'
 export default {
   name: 'EditPost',
   props: [
@@ -106,6 +103,7 @@ export default {
   background-color: white;
   border: none;
 }
+
 .btn-outline-secondary,
 .btn-secondary, 
 .btn-secondary:hover {
@@ -119,6 +117,7 @@ export default {
   right: 15px;
   z-index: 2;
 }
+
 .collapsed {
   visibility: hidden;
   display: block !important;
@@ -127,6 +126,7 @@ export default {
   transition: transform 0.1s, opacity 0.5s ease-in-out;
   opacity: 0;
 }
+
 .collapsed card-body {
   padding: 1rem;
   box-shadow: 0px 1px 5px 4px rgba(204, 204, 204, 0.2);
@@ -137,6 +137,7 @@ export default {
   opacity: 1;
   transform: scaleY(1);
 }
+
 @media screen and (min-width: 280px) and (max-width: 767px) {
   .collapsed,
   .collapsed card-body {

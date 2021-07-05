@@ -10,6 +10,7 @@
         customClass="profile-btn__img"
         divCustomClass="div-profile-btn-img"/>
     </button>
+
     <b-collapse
       id="profile-collapsed"
       v-bind:class="`collapsed mt-2 position-fixed ${areActionsVisible && 'visible'}`">
@@ -73,6 +74,7 @@ export default {
 </script>
 
 <style>
+
 .profile-btn {
   font-weight: 500;
   border: none;

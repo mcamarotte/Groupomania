@@ -8,18 +8,17 @@
       :elementId="post.id"
       modifyText="Edit post"
       deleteText="Delete post">
-      <b-modal
-        :id="`modal-${post.id}`" title="Edit post" ok-title="Ok" ok-variant="light" @ok="onUpload" ok-only>
-        <b-form>
+       <b-modal
+         :id="`modal-${post.id}`" title="Edit post" ok-title="Ok" ok-variant="light" @ok="onUpload" ok-only>
+         <b-form>
           <PostForm :imgUrl="post.imageUrl" @onFileSelected="onFileSelected" v-model="content"/>
-        </b-form>
-      </b-modal>
+         </b-form>
+       </b-modal>
     </EditButton>
   </div>
 </template>
 
 <script>
-import { apiClient } from '../services/ApiClient'
 import { mapActions } from 'vuex'
 import PostForm from './PostForm'
 import EditButton from './EditButton'
@@ -48,9 +47,11 @@ export default {
       this.displayNotification('Publication deleted')
 
     },
+
     onFileSelected (file) {
       this.selectedFile = file
     },
+
     async onUpload () {
       if (!this.content.trim().length) return
       await this.modifyPost({
@@ -66,8 +67,9 @@ export default {
 </script>
 
 <style>
+
 .modal-body {
-  padding: 1rem 1rem 0 1rem;
+  padding: 16px 16px 0 16px;
 }
 .modal-title {
   color: #747474;
@@ -78,7 +80,7 @@ export default {
   font-weight: 500;
   display: block;
   width: 100%;
-  margin: 0 1rem 1rem 1rem;
+  margin: 0 16px 16px 16px;
 }
 .modal-content {
   font-family: Avenir, Helvetica, Arial, sans-serif;

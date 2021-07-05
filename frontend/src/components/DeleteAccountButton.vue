@@ -2,8 +2,7 @@
   <div>
     <div class="d-flex justify-content-center">
       <button
-        class="delete-account d-flex justify-content-center align-items-center"
-      >
+        class="delete-account d-flex justify-content-center align-items-center">
         <p @click="onDeleteAccount" class="my-3 mr-1 mr-lg-2">
           Delete account
         </p>
@@ -14,8 +13,7 @@
 </template>
 
 <script>
-import { apiClient } from '../services/ApiClient'
-import { mapActions } from 'vuex'
+
 export default {
   name: 'DeleteAccountButton',
   data () {
@@ -36,7 +34,8 @@ export default {
 
 .delete-account {
   font-size: 14px;
-  border-radius: 0.25rem;
+  border-radius: 4px;
+  gap: 10px;
   background-color: transparent;
   border: none;
 }

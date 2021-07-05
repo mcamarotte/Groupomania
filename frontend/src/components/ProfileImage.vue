@@ -25,7 +25,7 @@ export default {
   background: black;
 }
 .profile-picture__img {
-    transform: scale(1.35);
+  transform: scale(1.35);
 }
 
 </style>
