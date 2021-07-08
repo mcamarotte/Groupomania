@@ -11,7 +11,7 @@
           type="text"
           v-model="search"
           placeholder= "Find a user"
-          ref="searchInput"/>
+          ref="searchInput">
       </div>
     </div>
 

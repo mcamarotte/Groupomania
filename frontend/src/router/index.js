@@ -46,14 +46,22 @@ const routes = [
       middleware: auth
     }
   },
-  {
+   {
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('../views/Admin.vue'),
+    meta: {
+      middleware: auth
+    }
+  },
+   {
     path: '/profile/:userId',
     name: 'UserProfile',
     component: () => import('../views/UserProfile.vue'),
     meta: {
       middleware: auth
     }
-  }
+  },
 ]
 
 const router = new VueRouter({ routes })

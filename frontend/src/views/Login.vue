@@ -86,8 +86,7 @@ export default {
               localStorage.setItem('userData', JSON.stringify(data.user))
               if(localStorage.getItem("userToken") != null){
               router.push({ name: 'Posts' })
-              }
-              
+              } 
             }
           })
           .catch(error => {

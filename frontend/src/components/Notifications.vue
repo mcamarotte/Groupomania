@@ -16,7 +16,7 @@
       id="notification-collapsed"
       v-bind:class="`collapsed mt-2 position-fixed ${areActionsVisible && 'visible'}`">
       <b-card class="border-0" @click="toggleActions">
-        <div v-for="notification in notificationsList" :key="notification">
+        <div v-for="notification in notificationsList" :key="notification.id">
           <router-link
             :to="{ name: 'OnePost', params: { postId: notification.postId } }" @click.native="deleteNotification(notification)">
             <div class="d-flex align-items-center">

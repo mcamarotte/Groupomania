@@ -39,6 +39,14 @@
           </button>
         </p>
 
+        <p class="card-text">
+          <button
+            class="collapsed-btn btn-block text-left"
+            @click="changeOrReloadPage('Admin')">
+            <b-icon icon="gear-fill" class="mr-2"></b-icon> Admin
+          </button>
+        </p>
+
       </b-card>
     </b-collapse>
   </div>
@@ -108,6 +116,7 @@ export default {
 
 .collapsed-btn {
   font-weight: 500;
+  gap: 10px;
   color: rgba(23, 4, 66, 0.8);
   background-color: rgb(255, 255, 255);
   border: none;
