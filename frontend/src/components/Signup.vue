@@ -42,6 +42,15 @@
                     class="account-input text-dark mb-2 pl-3 w-100"
                   ></b-form-input>
 
+                  <b-form-checkbox
+                   id="checkbox-1"
+                   v-model="input.status"
+                   class="account-input text-dark mb-2 pl-3 w-100"
+                   name="checkbox-1"
+                   value="accepted"> 
+                   Are you Admin?
+                  </b-form-checkbox>
+
                 </b-form-group>
 
                 <button
@@ -79,7 +88,8 @@ export default {
         firstName: '',
         lastName: '',
         email: '',
-        password: ''
+        password: '',
+        status: ''
       }
     }
   },
@@ -89,7 +99,8 @@ export default {
         this.input.firstName != '' &&
         this.input.lastName != '' &&
         this.input.email != '' &&
-        this.input.password != ''
+        this.input.password != '' &&
+        this.input.status != ''
       ) {
         apiClient
           .post('api/auth/signup', this.input)

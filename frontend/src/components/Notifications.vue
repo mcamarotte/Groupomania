@@ -116,7 +116,7 @@ export default {
   right: -4px;
   font-size: 12px;
   border-radius: 100%;
-  background: red;
+  background: rgb(255, 81, 0);;
   color: white;
   height: 20px;
   width: 20px;

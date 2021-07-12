@@ -34,6 +34,7 @@ export default {
 
 .delete-account {
   font-size: 14px;
+  color: rgb(255, 81, 0);
   border-radius: 4px;
   gap: 10px;
   background-color: transparent;

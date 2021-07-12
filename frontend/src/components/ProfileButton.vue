@@ -39,7 +39,7 @@
           </button>
         </p>
 
-        <p class="card-text">
+        <p class="card-text" v-if="userData.admin">
           <button
             class="collapsed-btn btn-block text-left"
             @click="changeOrReloadPage('Admin')">
@@ -60,8 +60,10 @@ export default {
   components: {ProfileImage},
   props: {},
   data () {
+    const userData = JSON.parse(localStorage.getItem('userData'))
+
     return {
-      userData: JSON.parse(localStorage.getItem('userData')),
+      userData,
       areActionsVisible: false
     }
   },
@@ -134,7 +136,7 @@ export default {
 .b-icon.bi {
   font-size: 125%;  
   vertical-align: text-bottom;
-  color: black;
+  color: rgb(255, 81, 0);
 }
 
 .div-profile-btn-img {

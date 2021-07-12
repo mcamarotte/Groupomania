@@ -88,14 +88,15 @@
                 </b-col>
                 <b-col sm="10">
                   <b-form-input
-                    id="admin"
+                    id="Admin"
                     type="text"
                     placeholder="Admin"
-                    class="mb-2 pl-lg-3">
+                    class="text-dark mb-2 pl-lg-3">
                   </b-form-input>
                 </b-col>
               </div>
             </b-form-group>
+
 
             <button
               type="submit"
@@ -108,12 +109,13 @@
       </b-col>
     </b-row>
     <UserSearch />
-    <PostsList :userId="userData.id" />
+    <PostsList />
   </div>
 </template>
 
 <script>
 import { apiClient } from '../services/ApiClient'
+import router from '../router/index'
 import ProfileImage from '../components/ProfileImage'
 import Menu from '../components/Menu'
 import PostsList from '../components/PostsList'
@@ -124,9 +126,9 @@ export default {
   name: 'Admin',
   components: {
     ProfileImage,
-    PostsList,
     UserDeleteAccount,
     UserSearch,
+    PostsList,
     Menu
 },
   data () {
@@ -199,7 +201,7 @@ export default {
 }
 
 .save-btn {
-  background-color: rgba(253, 45, 6, 0.8);
+  background-color: rgb(255, 81, 0);
   color: white;
   border-radius: 1rem;
   border: none;
@@ -210,7 +212,7 @@ export default {
 .save-btn:hover
 .save-btn:focus,
 .save-btn:active {
-  background-color: rgb(253, 45, 6);
+  background-color: rgb(255, 81, 0);;
   color: white;
   outline: none;
 }
